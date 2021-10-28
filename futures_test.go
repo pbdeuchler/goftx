@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/grishinsana/goftx/models"
+	"github.com/pbdeuchler/goftx/models"
 )
 
 func TestFutures_GetFutures(t *testing.T) {
