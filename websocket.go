@@ -118,7 +118,10 @@ func (s *Stream) serve(ctx context.Context, requests ...models.WSRequest) (chan 
 
 			for {
 				message := &models.WsResponse{}
-				err = conn.ReadJSON(&message)
+				// err = conn.ReadJSON(&message)
+				var err error
+				_, msg, err := conn.ReadMessage()
+				s.printf(string(msg))
 				if err != nil {
 					s.printf("read msg: %v", err)
 					if websocket.IsCloseError(err, websocket.CloseNormalClosure) {
